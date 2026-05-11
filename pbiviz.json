@@ -1,0 +1,19 @@
+{
+  "visual": {
+    "name": "reportGuardAccessibilityChecker",
+    "displayName": "ReportGuard Accessibility Checker",
+    "guid": "reportGuardAccessibilityChecker8B214C0F5C7D49E69A0E2D7AAF3F1B12",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "Accessibility scorecard with WCAG-inspired checklist, score 0–100, and remediation guidance. Does not legally certify compliance.",
+    "supportUrl": "https://github.com/hussnaintahir13/reportguard-accessibility-checker/issues",
+    "gitHubUrl": "https://github.com/hussnaintahir13/reportguard-accessibility-checker"
+  },
+  "apiVersion": "5.11.0",
+  "author": { "name": "Syed Hussnain", "email": "maintainers@example.com" },
+  "assets": { "icon": "assets/icon.png" },
+  "externalJS": [],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "stringResources": []
+}

@@ -1,0 +1,72 @@
+{
+  "dataRoles": [
+    { "displayName": "Total Checks", "name": "totalChecks", "kind": "Measure" },
+    { "displayName": "Passed Checks", "name": "passedChecks", "kind": "Measure" },
+    { "displayName": "Failed Contrast Checks", "name": "failedContrastChecks", "kind": "Measure" },
+    { "displayName": "Missing Alt Text Count", "name": "missingAltTextCount", "kind": "Measure" },
+    { "displayName": "Small Font Count", "name": "smallFontCount", "kind": "Measure" },
+    { "displayName": "Keyboard Issue Count", "name": "keyboardIssueCount", "kind": "Measure" },
+    { "displayName": "Title Issue Count", "name": "titleIssueCount", "kind": "Measure" },
+    { "displayName": "Cognitive Load Issue Count", "name": "cognitiveLoadIssueCount", "kind": "Measure" },
+    { "displayName": "Manual Score (optional)", "name": "manualScore", "kind": "Measure" },
+    { "displayName": "Issue Category", "name": "issueCategory", "kind": "Grouping" },
+    { "displayName": "Issue Description", "name": "issueDescription", "kind": "Grouping" }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": { "for": { "in": "issueCategory" } },
+        "values": {
+          "select": [
+            { "bind": { "to": "totalChecks" } },
+            { "bind": { "to": "passedChecks" } },
+            { "bind": { "to": "failedContrastChecks" } },
+            { "bind": { "to": "missingAltTextCount" } },
+            { "bind": { "to": "smallFontCount" } },
+            { "bind": { "to": "keyboardIssueCount" } },
+            { "bind": { "to": "titleIssueCount" } },
+            { "bind": { "to": "cognitiveLoadIssueCount" } },
+            { "bind": { "to": "manualScore" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "display": {
+      "properties": {
+        "showScore": { "type": { "bool": true } },
+        "showChecklist": { "type": { "bool": true } },
+        "showRemediation": { "type": { "bool": true } },
+        "showDisclaimer": { "type": { "bool": true } },
+        "compactMode": { "type": { "bool": true } },
+        "decimalPlaces": { "type": { "numeric": true } },
+        "titleText": { "type": { "text": true } },
+        "fontSize": { "type": { "numeric": true } },
+        "cardSpacing": { "type": { "numeric": true } }
+      }
+    },
+    "thresholds": {
+      "properties": {
+        "ready": { "type": { "numeric": true } },
+        "minor": { "type": { "numeric": true } },
+        "review": { "type": { "numeric": true } },
+        "risk": { "type": { "numeric": true } }
+      }
+    },
+    "colors": {
+      "properties": {
+        "backgroundColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "textColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "readyColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "warningColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "riskColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "criticalColor": { "type": { "fill": { "solid": { "color": true } } } }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsKeyboardFocus": true,
+  "privileges": []
+}

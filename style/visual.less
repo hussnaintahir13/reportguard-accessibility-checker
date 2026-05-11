@@ -1,0 +1,117 @@
+.rg-root {
+    --rg-card-spacing: 8px;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    padding: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .rg-title {
+        font-size: 1.15em;
+        font-weight: 600;
+        margin: 0 0 8px;
+    }
+
+    .rg-score-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .rg-score {
+        font-size: 2.6em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .rg-badge {
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.85em;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .rg-checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 12px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: var(--rg-card-spacing);
+
+        .rg-check {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 8px;
+            row-gap: 2px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #E1E1E1;
+            outline: none;
+
+            &:focus { box-shadow: 0 0 0 2px #0078D4; }
+
+            .rg-check-icon {
+                grid-row: span 2;
+                align-self: center;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                color: #fff;
+                font-weight: 700;
+                text-align: center;
+                line-height: 22px;
+                font-size: 0.85em;
+            }
+            .rg-check-label { font-weight: 600; }
+            .rg-check-detail { font-size: 0.8em; opacity: 0.75; }
+
+            &.pass .rg-check-icon { background: #107C10; }
+            &.fail .rg-check-icon { background: #A4262C; }
+            &.fail { border-color: rgba(164, 38, 44, 0.4); }
+        }
+    }
+
+    .rg-remediation {
+        background: rgba(217, 130, 43, 0.08);
+        border-left: 3px solid #D9822B;
+        padding: 8px 12px;
+        border-radius: 3px;
+        h3 { margin: 0 0 4px; font-size: 1em; }
+        ul { margin: 0; padding-left: 18px; }
+        li { font-size: 0.9em; margin: 2px 0; }
+    }
+
+    .rg-footer {
+        margin: 8px 0 0;
+        font-size: 0.75em;
+        opacity: 0.65;
+    }
+
+    .rg-empty {
+        text-align: center;
+        padding: 24px;
+        opacity: 0.7;
+        h3 { margin: 0 0 8px; }
+        p { margin: 0; font-size: 0.9em; }
+    }
+
+    &.compact {
+        padding: 8px;
+        .rg-score { font-size: 1.8em; }
+        .rg-checklist { grid-template-columns: 1fr; }
+    }
+}
+
+@media (forced-colors: active) {
+    .rg-root {
+        .rg-badge,
+        .rg-check-icon { border: 1px solid CanvasText; }
+        .rg-remediation { border-left-color: CanvasText; }
+    }
+}
