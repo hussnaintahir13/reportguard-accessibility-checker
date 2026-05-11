@@ -10,10 +10,6 @@ Many Power BI reports fail the basics of WCAG: low contrast, missing alt text, t
 
 A Power BI custom visual runs inside an isolated sandbox. It **cannot** introspect other visuals or the report DOM. ReportGuard therefore consumes _measures_ that you produce — usually from a small "accessibility audit" table maintained alongside the report. It is a scorecard, not an automated scanner.
 
-## Screenshots
-
-> _Placeholder — drop screenshots into `assets/screenshots/` before publishing._
-
 ## Data fields
 
 | Role | Kind | Purpose |
