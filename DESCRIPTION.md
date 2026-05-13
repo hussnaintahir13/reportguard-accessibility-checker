@@ -1,6 +1,6 @@
 # ReportGuard Accessibility Checker
 
-**Author:** Syed Hussnain
+**Author:** [Syed Hussnain Tahir Sherazi](https://www.syedhussnain.com)
 **License:** MIT
 **Category:** Accessibility / compliance / governance
 
@@ -31,3 +31,11 @@ A Power BI custom visual runs in a sandbox and **cannot** introspect other visua
 
 ## Privacy & security
 No network calls. No third-party JS. `privileges` array is empty. Read-only.
+
+## Author
+**Syed Hussnain Tahir Sherazi** — Power BI / Microsoft Fabric developer building the ReportGuard Accessibility Checker and other Power BI custom visuals.
+
+- Website: [www.syedhussnain.com](https://www.syedhussnain.com)
+- Email: [Contact@syedhussnain.com](mailto:Contact@syedhussnain.com)
+- LinkedIn: [linkedin.com/in/hussnainsherazi](https://www.linkedin.com/in/hussnainsherazi)
+- GitHub: [github.com/hussnaintahir13](https://github.com/hussnaintahir13)
