@@ -2,6 +2,10 @@
 
 ReportGuard is a Power BI custom visual that scores a report or page against an accessibility checklist (contrast, alt text, font size, keyboard, titles, cognitive load) and renders remediation guidance.
 
+## Quick install (no build required)
+
+Grab the latest `.pbiviz` from [`release/`](release/) (use **Download raw file** in GitHub) and import via **Visualizations → … → Import a visual from a file** in Power BI Desktop. Full steps in [`release/README.md`](release/README.md).
+
 ## Why it matters
 
 Many Power BI reports fail the basics of WCAG: low contrast, missing alt text, tiny fonts, no keyboard reachability. Public-sector, healthcare and education tenants must address these before publishing. ReportGuard puts a visible, opinionated accessibility score on the canvas so issues can't hide.

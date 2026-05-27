@@ -16,7 +16,10 @@ export class Visual implements IVisual {
     private settings: VisualSettings = new VisualSettings();
     private formattingSettingsService: FormattingSettingsService;
 
-    constructor(options: VisualConstructorOptions) {
+    constructor(options?: VisualConstructorOptions) {
+        if (!options) {
+            throw new Error("ReportGuard: VisualConstructorOptions are required.");
+        }
         this.root = options.element;
         this.root.classList.add("rg-root");
         this.formattingSettingsService = new FormattingSettingsService();
@@ -66,7 +69,7 @@ export class Visual implements IVisual {
     private render(result: AccessibilityResult, width: number, height: number): void {
         const colors = this.getColors();
         const d = this.settings.display;
-        this.root.innerHTML = "";
+        while (this.root.firstChild) this.root.removeChild(this.root.firstChild);
         this.root.style.background = colors.background;
         this.root.style.color = colors.text;
         this.root.style.fontSize = `${d.fontSize.value}px`;
@@ -172,10 +175,12 @@ export class Visual implements IVisual {
         const wrap = document.createElement("div");
         wrap.className = "rg-empty";
         wrap.setAttribute("role", "status");
-        wrap.innerHTML = `
-            <h3>ReportGuard Accessibility Checker</h3>
-            <p>Add accessibility measures (passed/total checks or per-category issue counts) to begin.</p>
-        `;
+        const h = document.createElement("h3");
+        h.textContent = "ReportGuard Accessibility Checker";
+        wrap.appendChild(h);
+        const p = document.createElement("p");
+        p.textContent = "Add accessibility measures (passed/total checks or per-category issue counts) to begin.";
+        wrap.appendChild(p);
         this.root.appendChild(wrap);
     }
 }
