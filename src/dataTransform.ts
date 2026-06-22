@@ -37,7 +37,6 @@ export function extractMeasures(dataView: DataView | undefined): AccessibilityMe
             const firstVal = c.values && c.values.length > 0 ? c.values[0] : undefined;
             if (firstVal == null) continue;
             if (roles.issueCategory) m.issueCategory = String(firstVal);
-            if (roles.issueDescription) m.issueDescription = String(firstVal);
         }
     }
 

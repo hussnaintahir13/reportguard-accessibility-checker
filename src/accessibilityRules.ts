@@ -78,7 +78,7 @@ export function buildRemediation(m: AccessibilityMeasures): string[] {
     if (m.titleIssueCount && m.titleIssueCount > 0) out.push("Replace generic titles with descriptive, action-oriented summaries.");
     if (m.cognitiveLoadIssueCount && m.cognitiveLoadIssueCount > 0) out.push("Reduce information density — split crowded pages or hide secondary detail.");
 
-    if (out.length > 1) {
+    if (out.length >= 1) {
         out.unshift(`${totalIssues} accessibility risk${totalIssues === 1 ? "" : "s"} found. Prioritise the items below.`);
     }
     return out;
@@ -113,7 +113,6 @@ export function buildResult(m: AccessibilityMeasures, t: Thresholds): Accessibil
         checklist: buildChecklist(m),
         remediation: buildRemediation(m),
         hasData: true,
-        category: m.issueCategory,
-        description: m.issueDescription
+        category: m.issueCategory
     };
 }

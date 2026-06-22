@@ -1,3 +1,4 @@
+import powerbi from "powerbi-visuals-api";
 import { formattingSettings } from "powerbi-visuals-utils-formattingmodel";
 
 import FormattingSettingsCard = formattingSettings.SimpleCard;
@@ -13,7 +14,13 @@ class DisplayCard extends FormattingSettingsCard {
     showRemediation = new formattingSettings.ToggleSwitch({ name: "showRemediation", displayName: "Show remediation panel", value: true });
     showDisclaimer = new formattingSettings.ToggleSwitch({ name: "showDisclaimer", displayName: "Show disclaimer", value: true });
     compactMode = new formattingSettings.ToggleSwitch({ name: "compactMode", displayName: "Compact mode", value: false });
-    decimalPlaces = new formattingSettings.NumUpDown({ name: "decimalPlaces", displayName: "Score decimal places", value: 0 });
+    decimalPlaces = new formattingSettings.NumUpDown({
+        name: "decimalPlaces", displayName: "Score decimal places", value: 0,
+        options: {
+            minValue: { type: powerbi.visuals.ValidatorType.Min, value: 0 },
+            maxValue: { type: powerbi.visuals.ValidatorType.Max, value: 10 }
+        }
+    });
     titleText = new formattingSettings.TextInput({ name: "titleText", displayName: "Title", value: "ReportGuard Accessibility Checker", placeholder: "ReportGuard Accessibility Checker" });
     fontSize = new formattingSettings.NumUpDown({ name: "fontSize", displayName: "Font size", value: 14 });
     cardSpacing = new formattingSettings.NumUpDown({ name: "cardSpacing", displayName: "Card spacing (px)", value: 8 });

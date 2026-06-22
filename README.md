@@ -1,5 +1,8 @@
 # ReportGuard — Accessibility Checker
 
+## Quick start (non-technical)
+New here? Read **[HOW-TO-USE.md](HOW-TO-USE.md)** for a plain-English guide to importing and using this visual.
+
 ReportGuard is a Power BI custom visual that scores a report or page against an accessibility checklist (contrast, alt text, font size, keyboard, titles, cognitive load) and renders remediation guidance.
 
 ## Quick install (no build required)

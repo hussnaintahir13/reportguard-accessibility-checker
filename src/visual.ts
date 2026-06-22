@@ -37,7 +37,8 @@ export class Visual implements IVisual {
         };
 
         const result = buildResult(extractMeasures(dataView), t);
-        this.render(result, options.viewport.width, options.viewport.height);
+        const viewport = options.viewport;
+        this.render(result, viewport ? viewport.width : 0, viewport ? viewport.height : 0);
     }
 
     public getFormattingModel(): powerbi.visuals.FormattingModel {
@@ -99,8 +100,9 @@ export class Visual implements IVisual {
             const score = document.createElement("div");
             score.className = "rg-score";
             score.style.color = this.statusColor(result.status, colors);
-            score.textContent = `${result.score.toFixed(d.decimalPlaces.value)} / 100`;
-            score.setAttribute("aria-label", `Accessibility score ${result.score.toFixed(d.decimalPlaces.value)} out of 100`);
+            const dp = Math.max(0, Math.min(20, d.decimalPlaces.value));
+            score.textContent = `${result.score.toFixed(dp)} / 100`;
+            score.setAttribute("aria-label", `Accessibility score ${result.score.toFixed(dp)} out of 100`);
 
             const badge = document.createElement("span");
             badge.className = "rg-badge";

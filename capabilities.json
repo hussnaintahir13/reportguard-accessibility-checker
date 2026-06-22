@@ -9,8 +9,7 @@
     { "displayName": "Title Issue Count", "name": "titleIssueCount", "kind": "Measure" },
     { "displayName": "Cognitive Load Issue Count", "name": "cognitiveLoadIssueCount", "kind": "Measure" },
     { "displayName": "Manual Score (optional)", "name": "manualScore", "kind": "Measure" },
-    { "displayName": "Issue Category", "name": "issueCategory", "kind": "Grouping" },
-    { "displayName": "Issue Description", "name": "issueDescription", "kind": "Grouping" }
+    { "displayName": "Issue Category", "name": "issueCategory", "kind": "Grouping" }
   ],
   "dataViewMappings": [
     {

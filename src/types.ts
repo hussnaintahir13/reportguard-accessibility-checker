@@ -11,7 +11,6 @@ export interface AccessibilityMeasures {
     cognitiveLoadIssueCount?: number;
     manualScore?: number;
     issueCategory?: string;
-    issueDescription?: string;
 }
 
 export interface ChecklistItem {
@@ -29,7 +28,6 @@ export interface AccessibilityResult {
     remediation: string[];
     hasData: boolean;
     category?: string;
-    description?: string;
 }
 
 export interface Thresholds {
